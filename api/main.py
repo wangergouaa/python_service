@@ -15,6 +15,10 @@ users = [
     User(id=2, name="Bob"),
 ]
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 @app.get("/users", response_model=List[User])
 def get_users():
     return users
